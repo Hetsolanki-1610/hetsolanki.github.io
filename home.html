@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Pati - Aapani Cha</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #fff;
+            color: #111;
+            line-height: 1.7;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #000;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            font-size: 22px;
+            margin: 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        h2 {
+            color: #000;
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 240px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+        }
+
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid #000;
+            padding-left: 12px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Aapani Cha - Chai Pati</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Chai Pati - Premium Black Tea Leaves</h2>
+        <img  src="https://m.media-amazon.com/images/I/61F5wJpmbnL._AC_UL320_.jpg" alt="Chai Pati Image 1">
+        <p>
+            Aapani Cha Chai Pati is carefully handpicked from the finest tea gardens in India. Each leaf is
+            selected to ensure you get the perfect balance of aroma, flavor, and strength in every cup. Our chai
+            pati is perfect for morning boosts or evening relaxation, providing a rich, robust taste that lingers.
+        </p>
+        <p>
+            With its strong flavor, it pairs beautifully with milk and spices, making your traditional masala chai
+            unforgettable. Premium black tea from Aapani Cha promises consistency, freshness, and the true taste
+            of India in every sip.
+        </p>
+
+        <h3 id="reviews">Customer Reviews</h3>
+        <blockquote>
+            "Absolutely love the strong flavor! Makes the perfect morning chai. I have been buying Aapani Cha
+            Pati for months and it never disappoints." – Priya S.
+        </blockquote>
+        <blockquote>
+            "Rich aroma and taste. My family enjoys every cup, and it brews perfectly every time." – Rakesh M.
+        </blockquote>
+        <blockquote>
+            "Best loose leaf tea I’ve tried in India. Authentic, fresh, and so flavorful." – Anjali D.
+        </blockquote>
+
+        <h3 id="benefits">Health Benefits</h3>
+        <p>
+            Black tea from Aapani Cha is not just delicious, it comes with multiple health benefits:
+        </p>
+        <ul>
+            <li>Boosts energy and alertness</li>
+            <li>Rich in antioxidants</li>
+            <li>Supports heart health</li>
+            <li>Aids digestion and metabolism</li>
+            <li>Promotes mental focus</li>
+        </ul>
+
+        <h3 id="tips">Brewing Tips</h3>
+        <p>
+            To get the perfect cup of chai:
+        </p>
+        <ul>
+            <li>Use fresh cold water and bring it to a boil.</li>
+            <li>Add 1-2 tsp of Aapani Cha Pati per cup.</li>
+            <li>Simmer for 3-5 minutes for strong flavor.</li>
+            <li>Mix with milk and spices as desired.</li>
+            <li>Strain before serving to enjoy the smooth, rich taste.</li>
+        </ul>
+
+        <img src="https://m.media-amazon.com/images/I/61ma1Bkd+OL.SY741.jpg" alt="Chai Pati Image 2">
+
+        <h3>Why Choose Aapani Cha?</h3>
+        <p>
+            Aapani Cha ensures every batch of tea leaves is fresh, hygienically packaged, and of the highest
+            quality. Trusted by tea lovers across India, our Chai Pati guarantees a premium experience, cup after cup.
+        </p>
+        <p>
+            Whether for home brewing, cafes, or gifting, our tea leaves are perfect for anyone who wants authentic
+            Indian chai with a bold and rich flavor.
+        </p>
+    </div>
+
+    <footer>
+        &copy; <span id="year"></span> Aapani Cha. Creted by het webstudio.
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
