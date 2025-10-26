@@ -106,7 +106,7 @@
       </div>
       <span id="productPrice" class="text-2xl font-semibold text-green-600 mb-4 block">₹3,420.00</span>
   <button id="moqBtn" class="bg-yellow-500 hover:bg-yellow-600 text-white px-5 py-2 rounded-lg font-semibold w-40 mb-4">
-    MOQ-15
+    MOQ-15 Pack
   </button>
     <button onclick="openLoginForm(this)" data-product="Premium Tea Pack ₹199" id="moqBuyBtn"
       class="hidden bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold mb-4">
@@ -175,7 +175,7 @@
           <img
             src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=vardayinitea.316@idfcbank&pn=Aapani+Cha&am=199&cu=INR&tn=Tea+Order"
             width="200" alt="UPI QR Code"
-            onclick="window.location.href='upi://pay?pa=vardayinitea.316@idfcbank&pn=Aapani+Cha&am=199&cu=INR&tn=Tea+Order'">
+            onclick="window.location.href='upi://pay?pa=vardayinitea.316@idfcbank&pn=Aapani+Cha&am=1300&cu=INR&tn=Tea+Order'">
           <p class="text-sm mt-1">Tap QR to open UPI app</p>
         </div>
       </div>
@@ -342,7 +342,7 @@
 
       document.getElementById("paymentSection").classList.remove("hidden");
     });
-    
+    // ✅ MOQ Button Logic
 let moqApplied = false;
 
 document.getElementById("moqBtn").addEventListener("click", () => {
@@ -351,25 +351,25 @@ document.getElementById("moqBtn").addEventListener("click", () => {
   const moqBuyBtn = document.getElementById("moqBuyBtn");
 
   if (!moqApplied) {
-
-    priceElement.textContent = "₹1,935.00 (MOQ-15)";
+    // MOQ Activated
+    priceElement.textContent = "₹1,935.00 ";
     priceElement.classList.add("text-orange-600");
-    moqBtn.textContent = "Remove MOQ-15";
+    moqBtn.textContent = "Remove MOQ-1";
     moqBtn.classList.replace("bg-yellow-500", "bg-red-500");
     moqBtn.classList.replace("hover:bg-yellow-600", "hover:bg-red-600");
 
-  
+    // Show Side Button
     moqBuyBtn.classList.remove("hidden");
     moqApplied = true;
   } else {
-
+    // MOQ Removed
     priceElement.textContent = "₹3,420.00";
     priceElement.classList.remove("text-orange-600");
     moqBtn.textContent = "MOQ-15";
-    moqBtn.classList.replace("bg-yellow-500", "bg-yellow-500");
+    moqBtn.classList.replace("bg-red-500", "bg-yellow-500");
     moqBtn.classList.replace("hover:bg-red-600", "hover:bg-yellow-600");
 
-  
+    // Hide Side Button
     moqBuyBtn.classList.add("hidden");
     moqApplied = false;
   }
