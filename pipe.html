@@ -11,7 +11,6 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden;
-     
     }
 
     a .lop {
@@ -80,14 +79,13 @@
   </nav>
   <div>.</div>
 
-  
+
   <section class="max-w-7xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-6 bg-white rounded-lg shadow-lg">
 
 
     <div class="flex gap-4">
-
+     
       <div class="flex flex-col gap-2"></div>
-
 
       <div class="relative flex-1">
         <img id="mainImage" src="WhatsApp Image 2025-09-23 at 22.25.59_23fc4ec5.jpg"
@@ -95,7 +93,6 @@
 
       </div>
     </div>
-
 
     <div class="flex flex-col justify-center">
       <h1 class="text-3xl font-bold mb-2">Aapani Cha Premium Gold Tea,
@@ -107,12 +104,19 @@
         <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">500g Pack</span>
         <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">Premium Quality</span>
       </div>
-      <span class="text-2xl font-semibold text-green-600 mb-4">₹3,420.00</span>
+      <span id="productPrice" class="text-2xl font-semibold text-green-600 mb-4 block">₹3,420.00</span>
+  <button id="moqBtn" class="bg-yellow-500 hover:bg-yellow-600 text-white px-5 py-2 rounded-lg font-semibold w-40 mb-4">
+    MOQ-15
+  </button>
+    <button onclick="openLoginForm(this)" data-product="Premium Tea Pack ₹199" id="moqBuyBtn"
+      class="hidden bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold mb-4">
+      Buy MOQ-15 Pack
+    </button>
+  </div>
 
 
-      <button class="lop2" data-product="Aapani Cha Gold Tea, 250g" onclick="openLoginForm(this)">BUY
-        NOW</button>
-      <button class="lop2"  onclick="window.location.href='about.html'">Rating & Review</button>
+      <button class="lop2" data-product="Aapani Cha Gold Tea, 250g" onclick="openLoginForm(this)">BUY NOW</button>
+       <button class="lop2"  onclick="window.location.href='about.html'">Rating & Review</button>
 
 
     </div>
@@ -121,56 +125,9 @@
   </section>
 
   
-  <section id="menu" class="py-16">
-    <div class="container mx-auto px-4 text-center mb-10">
-    </div>
-    <div class="container mx-auto px-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition lpo">
-        <img src="https://m.media-amazon.com/images/I/61F5wJpmbnL.AC_UL320.jpg" alt="Aapani Cha Gold Tea"
-          class="mx-auto h-40 object-contain mb-4 rounded-lg" />
-        <h3 class="font-semibold text-lg text-gray-800 mb-2">Aapani Cha Gold Tea, 250g</h3>
-        <p class="text-green-600 font-bold mb-4">₹199</p>
-        <p class="text-gray-600 text-sm mb-4">Strong & Aromatic Loose Leaf Black Tea | Rich Flavor | No Added
-          Flavors or Preservatives</p>
-
-        <button class="lop" onclick="window.location.href='buy3.html'">BUY
-          NOW</button>
-      </div>
-
-     
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition lpo">
-        <img src="https://m.media-amazon.com/images/I/61ma1Bkd+OL.SY741.jpg" alt="Aapani Cha Black Tea"
-          class="mx-auto h-40 object-contain mb-4 rounded-lg" />
-        <h3 class="font-semibold text-lg text-gray-800 mb-2">Aapani Cha Black Tea, 500g</h3>
-        <p class="text-green-600 font-bold mb-4">₹299</p>
-        <p class="text-gray-600 text-sm mb-4">Strong & Aromatic Assam Tea Leaves | Handpicked for best flavor
-        </p>
-        <button class="lop" onclick="window.location.href='blacktea.html'">BUY
-          NOW</button>
-      </div>
-
-      
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition lpo">
-        <img src="https://m.media-amazon.com/images/I/413Zm9M-YYL.SX300_SY300_QL70_FMwebp.jpg" alt="Tulsi Chai"
-          class="mx-auto h-40 object-cover mb-4 rounded-lg" />
-        <h3 class="font-semibold text-lg text-gray-800 mb-2">Aapani Cha Premium Gold Tea 500g</h3>
-        <p class="text-green-600 font-bold mb-4">₹28</p>
-        <p class="text-gray-600 text-sm mb-4">PREMIUM QUALITY: Loose leaf black tea from India best chai</p>
-
-        <button class="lop" onclick="window.location.href='buy.html'">BUY
-          NOW</button>
-      </div>
-
-    </div>
-  </section>
-
-
- 
   <div class="overlay fixed inset-0 bg-black bg-opacity-50 hidden z-40" id="loginOverlay"></div>
 
- 
+
   <div class="popup fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
              bg-white p-6 rounded-lg shadow-lg w-96 hidden z-50 
              max-h-[90vh] overflow-y-auto" id="loginPopup">
@@ -178,22 +135,23 @@
     <h3 class="text-xl font-bold mb-4">Enter your Details</h3>
 
     <form id="loginForm" class="space-y-3">
-     
+
       <input type="text" id="loginName" placeholder="Enter your name" class="w-full border p-2 rounded" required />
 
-  
+ 
       <input type="tel" id="loginPhone" placeholder="Enter your phone number" class="w-full border p-2 rounded"
         required />
 
 
       <input type="text" id="loginState" placeholder="Enter your State" class="w-full border p-2 rounded" required />
 
+   
       <input type="text" id="loginCity" placeholder="Enter your City" class="w-full border p-2 rounded" required />
 
-     
+      
       <input type="text" id="loginFlat" placeholder="Flat / Apartment No." class="w-full border p-2 rounded" required />
 
-    
+
       <input type="text" id="loginAddress" placeholder="Enter your full address" class="w-full border p-2 rounded"
         required minlength="15" />
 
@@ -207,6 +165,7 @@
     <p class="text-gray-500 text-sm mt-2 text-center">
       मैसेज भेजने के बाद payment QR दिखाई देगा
     </p>
+
 
     <div id="paymentSection" class="mt-6 bg-gray-50 p-4 rounded-lg shadow-inner hidden">
       <h3 class="text-lg font-bold text-gray-700 mb-2 text-center">Payment Options</h3>
@@ -225,10 +184,6 @@
       </p>
     </div>
   </div>
-
-
-
-
 
  
   <footer class="bg-gray-900 text-gray-300 py-10">
@@ -274,7 +229,7 @@
 
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 wop">
 
-      
+
       <div>
         <h3 class="text-xl font-bold text-orange-400 mb-4">
           Aapani Cha – “Apno ke liye, Apno jaisi Chai”
@@ -287,7 +242,7 @@
         </p>
       </div>
 
-     
+ 
       <div>
         <h3 class="text-lg font-semibold mb-3">हम specialize करते हैं:</h3>
         <p class="text-sm leading-relaxed">
@@ -298,7 +253,6 @@
         </p>
       </div>
 
-     
       <div>
         <h3 class="text-lg font-semibold mb-3">Connect With Us</h3>
         <p class="text-sm leading-relaxed mb-4">
@@ -316,7 +270,6 @@
       © <span id="year"></span> Aapani Cha. All rights reserved.
     </div>
   </footer>
-
 
 
   <script>
@@ -343,7 +296,7 @@
       document.getElementById("mainImage").src = images[currentIndex];
     }
 
-   
+    
     function openLoginForm(button) {
       const product = button.getAttribute('data-product');
       document.getElementById('loginProduct').value = product;
@@ -352,13 +305,14 @@
       document.body.style.overflow = 'hidden';
     }
 
-   
+ 
     function closeLoginForm() {
       document.getElementById('loginOverlay').classList.add('hidden');
       document.getElementById('loginPopup').classList.add('hidden');
       document.body.style.overflow = 'auto';
     }
     document.getElementById('loginOverlay').addEventListener('click', closeLoginForm);
+
 
     document.getElementById('loginForm').addEventListener('submit', function (e) {
       e.preventDefault();
@@ -385,13 +339,43 @@
 
       window.open(whatsappURL, '_blank');
 
-     
+
       document.getElementById("paymentSection").classList.remove("hidden");
     });
+    
+let moqApplied = false;
 
+document.getElementById("moqBtn").addEventListener("click", () => {
+  const priceElement = document.getElementById("productPrice");
+  const moqBtn = document.getElementById("moqBtn");
+  const moqBuyBtn = document.getElementById("moqBuyBtn");
+
+  if (!moqApplied) {
+
+    priceElement.textContent = "₹1,935.00 (MOQ-15)";
+    priceElement.classList.add("text-orange-600");
+    moqBtn.textContent = "Remove MOQ-15";
+    moqBtn.classList.replace("bg-yellow-500", "bg-red-500");
+    moqBtn.classList.replace("hover:bg-yellow-600", "hover:bg-red-600");
+
+  
+    moqBuyBtn.classList.remove("hidden");
+    moqApplied = true;
+  } else {
+
+    priceElement.textContent = "₹3,420.00";
+    priceElement.classList.remove("text-orange-600");
+    moqBtn.textContent = "MOQ-15";
+    moqBtn.classList.replace("bg-yellow-500", "bg-yellow-500");
+    moqBtn.classList.replace("hover:bg-red-600", "hover:bg-yellow-600");
+
+  
+    moqBuyBtn.classList.add("hidden");
+    moqApplied = false;
+  }
+});
   </script>
 
 </body>
 
 </html>
-
