@@ -257,7 +257,27 @@
         UPI Id - vardayinitea.316@idfcbank
       </p>
     </div>
+    <!-- Rating button (Initially hidden) -->
+  <div id="ratingButtonSection" class="hidden mt-4 text-center">
+    <button onclick="window.location.href='about.html'"
+      class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold">
+      ⭐ Give Rating & Review
+    </button>
   </div>
+  </div>
+
+<div id="paymentSection" class="mt-6 bg-gray-50 p-4 rounded-lg shadow-inner hidden">
+  ...
+</div>
+
+<!-- 👇 Add this here -->
+<div id="ratingButtonSection" class="hidden mt-4 text-center">
+  <button onclick="window.location.href='about.html'"
+    class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold">
+    ⭐ Give Rating & Review
+  </button>
+</div>
+
 
 
 
@@ -394,34 +414,40 @@
     document.getElementById('loginOverlay').addEventListener('click', closeLoginForm);
 
 
-    document.getElementById('loginForm').addEventListener('submit', function (e) {
-      e.preventDefault();
+   document.getElementById('loginForm').addEventListener('submit', function (e) {
+  e.preventDefault();
 
-      const name = document.getElementById('loginName').value.trim();
-      const phone = document.getElementById('loginPhone').value.trim();
-      const state = document.getElementById('loginState').value.trim();
-      const city = document.getElementById('loginCity').value.trim();
-      const flat = document.getElementById('loginFlat').value.trim();
-      const address = document.getElementById('loginAddress').value.trim();
-      const product = document.getElementById('loginProduct').value.trim();
+  const name = document.getElementById('loginName').value.trim();
+  const phone = document.getElementById('loginPhone').value.trim();
+  const state = document.getElementById('loginState').value.trim();
+  const city = document.getElementById('loginCity').value.trim();
+  const flat = document.getElementById('loginFlat').value.trim();
+  const address = document.getElementById('loginAddress').value.trim();
+  const product = document.getElementById('loginProduct').value.trim();
 
-      if (!name || !phone || !state || !city || !flat || !address || !product) {
-        alert("Please fill all fields!");
-        return;
-      }
+  if (!name || !phone || !state || !city || !flat || !address || !product) {
+    alert("Please fill all fields!");
+    return;
+  }
 
-      const whatsappNumber = '918200942931';
-      const message =
-        `🛒 *New Order Details* 🛒\n\n` +
-        `👤 Name: ${name}\n📞 Phone: ${phone}\n🏠 State: ${state}\n🏙 City: ${city}\n🏢 Flat/Apt No.: ${flat}\n📍 Address: ${address}\n📦 Product: ${product}`;
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  const whatsappNumber = '918200942931';
+  const message =
+    `🛒 *New Order Details* 🛒\n\n` +
+    `👤 Name: ${name}\n📞 Phone: ${phone}\n🏠 State: ${state}\n🏙 City: ${city}\n🏢 Flat/Apt No.: ${flat}\n📍 Address: ${address}\n📦 Product: ${product}`;
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-      window.open(whatsappURL, '_blank');
+  window.open(whatsappURL, '_blank');
 
+  // ✅ Pehle payment show kare
+  document.getElementById("paymentSection").classList.remove("hidden");
 
-      document.getElementById("paymentSection").classList.remove("hidden");
-    });
+  // ✅ 2 second ke baad rating button show kare
+  setTimeout(() => {
+    document.getElementById("ratingButtonSection").classList.remove("hidden");
+  }, 5000);
+});
+
 
   </script>
 
