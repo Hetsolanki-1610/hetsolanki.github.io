@@ -240,13 +240,20 @@
           <img
             src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=vardayinitea.316@idfcbank&pn=Aapani+Cha&am=199&cu=INR&tn=Tea+Order"
             width="200" alt="UPI QR Code"
-            onclick="window.location.href='upi://pay?pa=vardayinitea.316@idfcbank&pn=Aapani+Cha&am=129&cu=INR&tn=Tea+Order'">
+            onclick="window.location.href='upi://pay?pa=vardayinitea.316@idfcbank&pn=Aapani+Cha&am=130&cu=INR&tn=Tea+Order'">
           <p class="text-sm mt-1">Tap QR to open UPI app</p>
         </div>
       </div>
       <p class="text-gray-500 text-sm mt-2 text-center">
         UPI Id - vardayinitea.316@idfcbank
       </p>
+    </div>
+     <!-- ✅ Rating Button -->
+    <div id="ratingButtonSection" class="hidden mt-4 text-center">
+      <button onclick="window.location.href='about.html'"
+        class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold">
+        ⭐ Give Rating & Review
+      </button>
     </div>
   </div>
 
@@ -387,6 +394,7 @@
     document.getElementById('loginOverlay').addEventListener('click', closeLoginForm);
 
 
+   // ✅ WhatsApp + Payment + Rating Logic
     document.getElementById('loginForm').addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -412,7 +420,13 @@
 
       window.open(whatsappURL, '_blank');
 
+      // ✅ Payment QR Show
       document.getElementById("paymentSection").classList.remove("hidden");
+
+      // ✅ Rating button show after 7 sec
+      setTimeout(() => {
+        document.getElementById("ratingButtonSection").classList.remove("hidden");
+      }, 7000);
     });
 
   </script>
