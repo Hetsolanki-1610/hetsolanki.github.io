@@ -125,7 +125,7 @@
         <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">250g Pack</span>
         <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">Premium Quality</span>
       </div>
-      <span class="text-2xl font-semibold text-green-600 mb-4">₹199</span>
+      <span class="text-2xl font-semibold text-green-600 mb-4">₹130</span>
       <!-- tages yaha dalo  -->
 
       <a href="https://www.amazon.in/Aapani-Cha-Aromatic-Flavors-Preservatives/dp/B0FMDKN27H/ref=sr_1_3?dib=eyJ2IjoiMSJ9.wBneErtowRP2JyexyMd0jMdyW2j0Mn6qtTqAsvXcn74ArwG3wdCV96as3F-KtMB5ZZz-YuYpFVF7AW3UpDNqdsMzPmpfqUz6ryhqMjMxkPQ.S501JKNhi1AtSgRObCcw-JXVnrS8PD5Ks42xKvE5tHs&dib_tag=se&keywords=Aapni+Cha&qid=1758870508&sr=8-3"><button
@@ -133,7 +133,6 @@
           On Amazon</button></a>
       <button class="lop2" data-product="Aapani Cha Gold Tea, 250g" onclick="openLoginForm(this)">BUY
         NOW</button>
-      <button class="lop2"  onclick="window.location.href='about.html'">Rating & Review</button>
 
       <div class="mt-6">
         <h2 class="text-lg font-semibold mb-2">colors:</h2>
@@ -158,7 +157,7 @@
         <img src="https://m.media-amazon.com/images/I/413Zm9M-YYL.SX300_SY300_QL70_FMwebp.jpg" alt="Tulsi Chai"
           class="mx-auto h-40 object-cover mb-4 rounded-lg" />
         <h3 class="font-semibold text-lg text-gray-800 mb-2">Aapani Cha Premium Gold Tea 500g</h3>
-        <p class="text-green-600 font-bold mb-4">₹249</p>
+        <p class="text-green-600 font-bold mb-4">₹200</p>
         <p class="text-gray-600 text-sm mb-4">PREMIUM QUALITY: Loose leaf black tea from India best chai</p>
         <button class="lop" data-product="Aapani Cha Premium Gold Tea 500g" onclick="window.location.href='buy.html'">BUY
           NOW</button>
@@ -168,10 +167,10 @@
         <img src="https://m.media-amazon.com/images/I/61ma1Bkd+OL.SY741.jpg" alt="Aapani Cha Black Tea"
           class="mx-auto h-40 object-contain mb-4 rounded-lg" />
         <h3 class="font-semibold text-lg text-gray-800 mb-2">Aapani Cha Black Tea, 500g</h3>
-        <p class="text-green-600 font-bold mb-4">₹299</p>
+        <p class="text-green-600 font-bold mb-4">₹200</p>
         <p class="text-gray-600 text-sm mb-4">Strong & Aromatic Assam Tea Leaves | Handpicked for best flavor
         </p>
-        <button class="lop" data-product="Aapani Cha Black Tea, 500g" onclick="window.location.href='blacktea.html'">BUY
+        <button class="lop" data-product="Aapani Cha Black Tea, 250g" onclick="window.location.href='blacktea.html'">BUY
           NOW</button>
       </div>
 
@@ -180,7 +179,7 @@
                 <img src="https://m.media-amazon.com/images/I/61xu-B2KEtL._SY550_.jpg" alt="Tulsi Chai"
                     class="mx-auto h-40 object-cover mb-4 rounded-lg" />
                 <h3 class="font-semibold text-lg text-gray-800 mb-2">Aapani Cha Black Tea, Loose Leaf, 250g</h3>
-                <p class="text-green-600 font-bold mb-4">₹129</p>
+                <p class="text-green-600 font-bold mb-4">₹130</p>
                 <p class="text-gray-600 text-sm mb-4">PREMIUM QUALITY: Loose leaf black tea from India best chai</p>
                 <button class="lop"  onclick="window.location.href='buy2.html'">BUY
                     NOW</button>
@@ -243,13 +242,20 @@
           <img
             src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=vardayinitea.316@idfcbank&pn=Aapani+Cha&am=199&cu=INR&tn=Tea+Order"
             width="200" alt="UPI QR Code"
-            onclick="window.location.href='upi://pay?pa=vardayinitea.316@idfcbank&pn=Aapani+Cha&am=199&cu=INR&tn=Tea+Order'">
+            onclick="window.location.href='upi://pay?pa=vardayinitea.316@idfcbank&pn=Aapani+Cha&am=130&cu=INR&tn=Tea+Order'">
           <p class="text-sm mt-1">Tap QR to open UPI app</p>
         </div>
       </div>
       <p class="text-gray-500 text-sm mt-2 text-center">
         UPI Id - vardayinitea.316@idfcbank
       </p>
+    </div>
+     <!-- ✅ Rating Button -->
+    <div id="ratingButtonSection" class="hidden mt-4 text-center">
+      <button onclick="window.location.href='about.html'"
+        class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold">
+        ⭐ Give Rating & Review
+      </button>
     </div>
   </div>
 
@@ -397,7 +403,7 @@
     }
     document.getElementById('loginOverlay').addEventListener('click', closeLoginForm);
 
-    // Submit form
+    // ✅ WhatsApp + Payment + Rating Logic
     document.getElementById('loginForm').addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -423,8 +429,13 @@
 
       window.open(whatsappURL, '_blank');
 
-      // Show Payment Section
+      // ✅ Payment QR Show
       document.getElementById("paymentSection").classList.remove("hidden");
+
+      // ✅ Rating button show after 7 sec
+      setTimeout(() => {
+        document.getElementById("ratingButtonSection").classList.remove("hidden");
+      }, 7000);
     });
 
   </script>
